@@ -31,8 +31,8 @@ const HomePage = () => {
 
   return (
     <div className="home-page-upperpart">
+        <h3>Social Media For Travellers</h3>
       <div className="heading-search">
-        <h2>Social Media For Travellers</h2>
         <input type="text" placeholder="search  here..." />
         <FaSearch className="searchicons" />
       </div>
