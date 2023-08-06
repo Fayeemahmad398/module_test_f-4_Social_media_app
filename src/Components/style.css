@@ -76,7 +76,6 @@ input {
   background: #fff;
   border-radius: 30px;
   padding: 15px;
-  transition-duration: 0.5s;
 }
 .box:hover {
   transform: scale(1.02, 1.02);
@@ -128,6 +127,9 @@ a {
   left: 10px;
   color: #ffffff;
   font-size: 20px;
+}
+.crossicon {
+  display: none;
 }
 #imgbox {
   position: relative;
@@ -206,6 +208,11 @@ a {
   /* border: 2px solid red; */
   width: 500px;
 }
+.menuBar {
+  font-size: 30px;
+  margin-right: 25px;
+  display: none;
+}
 .btns {
   display: flex;
   flex-direction: row;
@@ -221,7 +228,9 @@ a {
   border: white;
   border-radius: 8px;
 }
-
+.travel {
+  font-size: 30px;
+}
 .headingwithmargin {
   margin: 0px !important;
 }
@@ -240,12 +249,36 @@ a {
   }
 }
 @media (max-width: 500px) {
-  .imgdiv {
-    width: 50%;
+  .menuBar {
+    display: block;
   }
+  .imgdiv {
+    position: absolute;
+    right: 10px;
+    top: 70px;
+    width: 60px !important;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    transform: translateX(120%);
+    /* transform: translateX(0%); */
+    transition-duration: 0.9s;
+  }
+  .imgdiv2 {
+    transform: translateX(0%);
+  }
+  .crossicon {
+    display: block;
+    font-size: 30px !important;
+    margin-right: 25px;
+  }
+  .boxmenu {
+    display: none;
+  }
+
   .travel {
     margin: 0px;
-    font-size: 14px;
+    font-size: 24px;
   }
   .plane {
     margin: auto 10px;
@@ -256,7 +289,7 @@ a {
   #detailsimg {
     flex-direction: column;
     align-items: center;
-    justify-content: start;
+    justify-content: center;
     width: fit-content;
     margin: auto;
     height: 500px;
