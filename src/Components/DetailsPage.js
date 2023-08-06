@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 import { FaHeart, FaShareAlt } from "react-icons/fa";
 
 const DetailsPage = () => {
-  const [hasDetails, setDetails] = useState(true);
+  const [hasDetails, setDetails] = useState(false);
   const [products2, setproducts2] = useState([]);
   const obj = useSelector((state) => {
     return state.reducerToSelectedPost;
@@ -50,25 +50,31 @@ const DetailsPage = () => {
           <div className="btns">
             <button
               className="navlink"
-              id={hasDetails ? "orange" : ""}
               onClick={() => {
-                setDetails(true);
+                console.log("details btns");
+                setDetails(false);
+                {
+                  console.log(hasDetails);
+                }
               }}
+              id={!hasDetails ? "orange" : ""}
             >
               Details
             </button>
             <button
               className="navlink"
-              id={!hasDetails ? "orange" : ""}
               onClick={() => {
-                setDetails(false);
+                setDetails(true);
+                console.log("info")
               }}
+              id={hasDetails ? "orange" : ""}
             >
+              {console.log(hasDetails)}
               User Info
             </button>
           </div>
           <div>
-            {hasDetails ? (
+            {!hasDetails ? (
               <h3 className="headingwithmargin">
                 {obj.body[0].toUpperCase()}
                 {obj.body.slice(1)}
